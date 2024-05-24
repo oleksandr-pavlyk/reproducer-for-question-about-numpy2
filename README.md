@@ -16,7 +16,7 @@ First, it calls `c_get_itemsize` function declared in `_aux.h` and defined in `_
 directly. Obtained values are returned as a `tuple[int, int]`.
 
 
-# Observed behavior
+# Observed behavior with NumPy 2.0
 
 ```python
 import numpy as np, itemsize as c_ext
@@ -28,4 +28,10 @@ c_ext.get_itemsize(x), x.itemsize
 # outputs (0, 8), 8
 ```
 
-The question is what am I doing wrong?
+# Observed behavior with NumPy 1.26.4
+
+Extension compiled agains NumPy 1.26.4 outputs `(8, 8), 8` as expected.
+
+# Question
+
+What am I doing wrong? How can I fix it?
