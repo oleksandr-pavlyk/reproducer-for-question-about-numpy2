@@ -1,5 +1,9 @@
 # Building extensions
 
+## Development environment
+
+Python 3.10.12, NumPy 2.0.0b1, GCC 13.2 from Ubuntu 24.04 
+
 ## C extension
 
 ```sh
