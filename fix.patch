@@ -1,0 +1,22 @@
+diff --git a/_aux.c b/_aux.c
+index e3f8f32..435b612 100644
+--- a/_aux.c
++++ b/_aux.c
+@@ -1,4 +1,6 @@
+ #include "Python.h"
++#define NO_IMPORT_ARRAY
++#define PY_ARRAY_UNIQUE_SYMBOL ExtModule
+ #include "numpy/arrayobject.h"
+ #include "_aux.h"
+ 
+diff --git a/ext.c b/ext.c
+index 65ad2c2..0e8eb3e 100644
+--- a/ext.c
++++ b/ext.c
+@@ -1,5 +1,6 @@
+ #define PY_SSIZE_T_CLEAN
+ #include "Python.h"
++#define PY_ARRAY_UNIQUE_SYMBOL ExtModule
+ #include "numpy/arrayobject.h"
+ #include "_aux.h"
+ 

@@ -35,3 +35,13 @@ Extension compiled agains NumPy 1.26.4 outputs `(8, 8), 8` as expected.
 # Question
 
 What am I doing wrong? How can I fix it?
+
+# Answer based on help from NumPy mailing list
+
+The issue was caused by improper importing of NumPy C-API.
+The `_aux.c` requires pre-processing variable `NO_IMPORT_ARRAY` to be defined,
+as well `PY_ARRAY_UNIQUE_SYMBOL` to influence linkage of PyArray_API symbol.
+
+https://numpy.org/devdocs/reference/c-api/array.html#including-and-importing-the-c-api
+
+Apply `fix.patch` and recompile to resolve the problem.
