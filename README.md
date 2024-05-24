@@ -12,7 +12,7 @@ gcc -O3 -shared -fPIC $(python3-config --includes) -I$(python -c "import numpy a
 
 The extension defines a function `get_itemsize(arr)` that calls `PyArray_ITEMSIZE` underneath in two different ways.
 
-First in calls `c_get_itemsize` function declared in `_aux.h` and defined in `_aux.c`, and then it calls `PyArray_ITEMSIZE`
+First, it calls `c_get_itemsize` function declared in `_aux.h` and defined in `_aux.c` and then, it calls `PyArray_ITEMSIZE`
 directly. Obtained values are returned as a `tuple[int, int]`.
 
 
